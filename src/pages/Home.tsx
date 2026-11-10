@@ -7,7 +7,7 @@ import { VideoSection } from './home/VideoSection'
 export default function Home() {
   return (
     <>
-      <title>{SITE.name}</title>
+      <title>{`${SITE.name} — ${SITE.tagline}`}</title>
       <main id="konten">
         <LatestPosts />
         <SimulationList />
