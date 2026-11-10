@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+/* Font (Rubik + Libre Baskerville) dimuat dari Google Fonts lewat index.html. */
+
+@theme {
+  --color-ink: #000000;
+  --color-body: #4a4a4a;
+  --color-muted: #5a5a5a;
+  /* Oranye cerah untuk latar kartu & tombol. */
+  --color-brand: #ff4d00;
+  /* Oranye untuk teks/tautan di atas putih (kontras ≥ 4,5:1). */
+  --color-link: #db3a00;
+  --color-cobalt: #1f4fd8;
+  --color-tint: #f4f4f4;
+  --color-line: #d6d6d6;
+
+  --font-sans: 'Rubik', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-bold text-ink;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-cobalt);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  /* Lebar isi 1140px. Gutter sama dengan padding kartu (36px) supaya latar oranye kartu
+     yang meluas ke samping tidak pernah keluar dari layar. */
+  .container-page {
+    @apply mx-auto max-w-[1212px] px-5 md:px-9;
+  }
+
+  .link {
+    @apply text-link underline underline-offset-2 transition-colors hover:text-ink;
+  }
+
+  /* Rumus KaTeX */
+  .katex {
+    font-size: 1.1em;
+  }
+  .katex-display {
+    margin: 0;
+    padding: 0.35em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .katex-display > .katex {
+    font-size: 1.28em;
+  }
+}
