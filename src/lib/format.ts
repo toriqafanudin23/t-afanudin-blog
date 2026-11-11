@@ -21,3 +21,11 @@ export function formatDate(iso: string): string {
   const bulan = BULAN[Number(month) - 1]
   return day ? `${Number(day)} ${bulan} ${year}` : `${bulan} ${year}`
 }
+
+const commentTimeFormat = new Intl.DateTimeFormat('id-ID', { dateStyle: 'long', timeStyle: 'short' })
+
+/** Waktu komentar dari stempel ISO penuh, dalam zona waktu pengunjung, mis. "11 November 2026 pukul 09.21". */
+export function formatCommentTime(iso: string): string {
+  const time = new Date(iso)
+  return Number.isNaN(time.getTime()) ? '' : commentTimeFormat.format(time)
+}

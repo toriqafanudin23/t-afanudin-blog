@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from 'react'
-import { useNavigate, useSearchParams } from 'react-router'
+import { Link, useNavigate, useSearchParams } from 'react-router'
 import { Placeholder } from '@/components/ui/Placeholder'
-import { SITE } from '@/data/site'
+import { ABOUT, SITE } from '@/data/site'
+import { routes } from '@/lib/routes'
 
 export function HomeFooter() {
   const navigate = useNavigate()
@@ -30,6 +31,9 @@ export function HomeFooter() {
             <p className="text-[17px] leading-[1.56] text-muted">
               Saya membangun blog ini sebagai tempat berbagi, bercerita, dan tempat berinovasi, utamanya dalam pendidikan matematika.
             </p>
+            <Link to={routes.about} className="link mt-3 inline-block text-[17px]">
+              {ABOUT.linkLabel}
+            </Link>
           </div>
         </div>
 

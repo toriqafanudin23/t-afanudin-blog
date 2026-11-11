@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Comments } from '@/components/comments/Comments'
 import { ArticleFooter } from '@/components/layout/ArticleFooter'
 import { TagList } from '@/components/ui/TagList'
 import { LOMBA_2021_POST_SLUG, posts } from '@/data/posts'
@@ -74,6 +75,7 @@ export default function Lomba2021Post() {
           </p>
           <p className={BODY}>Terima kasih, Alfika. Terima kasih, Bu Rima.</p>
         </article>
+        <Comments className="mx-auto mt-16 w-full max-w-[800px]" />
       </main>
       <ArticleFooter />
     </>

@@ -1,4 +1,5 @@
 import { useId, useState } from 'react'
+import { Comments } from '@/components/comments/Comments'
 import { ArticleFooter } from '@/components/layout/ArticleFooter'
 import { QuadraticSimulator } from '@/components/simulator/QuadraticSimulator'
 import { Button } from '@/components/ui/Button'
@@ -78,6 +79,7 @@ export default function Post() {
           </h2>
           <Exercise />
         </article>
+        <Comments className="mx-auto mt-16 w-full max-w-[800px]" />
       </main>
       <ArticleFooter />
     </>

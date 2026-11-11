@@ -1,5 +1,5 @@
 import { PAGE_SLUGS, posts } from '../src/data/posts.ts'
-import { SITE } from '../src/data/site.ts'
+import { ABOUT, SITE } from '../src/data/site.ts'
 
 export interface SeoPage {
   /** Path rute, mis. "/" atau "/tulisan/slug". */
@@ -35,7 +35,13 @@ export function buildPages(): SeoPage[] {
       date: post.date,
       tags: post.tags,
     }))
-  return [home, ...articles]
+  const about: SeoPage = {
+    path: '/tentang',
+    title: `${ABOUT.title} — ${SITE.name}`,
+    description: ABOUT.description,
+    type: 'website',
+  }
+  return [home, about, ...articles]
 }
 
 /** Isi <head> khusus satu halaman. `siteUrl` tanpa garis miring di akhir; kosong = tanpa URL absolut. */
@@ -88,7 +94,17 @@ export function headTags(page: SeoPage, siteUrl: string | null): string {
           ...(page.tags?.length ? { keywords: page.tags.join(', ') } : {}),
           publisher: { '@type': 'Person', name: SITE.author },
         }
-      : {
+      : page.path !== '/'
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: page.title.replace(` — ${SITE.name}`, ''),
+            description: page.description,
+            inLanguage: 'id-ID',
+            ...(url ? { url } : {}),
+            about: author,
+          }
+        : {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: SITE.name,

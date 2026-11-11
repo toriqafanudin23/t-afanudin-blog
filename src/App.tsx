@@ -6,6 +6,7 @@ import { routes } from '@/lib/routes'
 import Home from '@/pages/Home'
 
 // Halaman selain beranda dimuat saat dibutuhkan (code splitting per rute).
+const About = lazy(() => import('@/pages/About'))
 const Post = lazy(() => import('@/pages/Post'))
 const Lomba2021Post = lazy(() => import('@/pages/posts/Lomba2021Post'))
 const SimulasiPost = lazy(() => import('@/pages/posts/SimulasiPost'))
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path={routes.about} element={<About />} />
           <Route path={routes.post(QUADRATIC_POST_SLUG)} element={<Post />} />
           <Route path={routes.post(LOMBA_2021_POST_SLUG)} element={<Lomba2021Post />} />
           <Route path={routes.post(SIMULASI_POST_SLUG)} element={<SimulasiPost />} />
