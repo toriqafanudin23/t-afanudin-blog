@@ -26,9 +26,9 @@ export function HomeFooter() {
             <Placeholder className="h-[150px] w-[120px] text-sm">foto</Placeholder>
           </div>
           <div>
-            <h3 className="mb-2 text-[22px] leading-[1.25] lg:text-2xl">{SITE.authorWithTitle}</h3>
+            <h3 className="mb-2 text-[22px] leading-[1.25] lg:text-2xl">{SITE.author}</h3>
             <p className="text-[17px] leading-[1.56] text-muted">
-              Guru matematika dan pengembang 1729, platform simulasi dan slide matematika untuk SMP dan SMA.
+              Saya membangun blog ini sebagai tempat berbagi, bercerita, dan tempat berinovasi, utamanya dalam pendidikan matematika.
             </p>
           </div>
         </div>

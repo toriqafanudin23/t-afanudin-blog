@@ -33,32 +33,4 @@ export const posts: readonly Post[] = [
     tags: ['fungsi-kuadrat', 'aljabar'],
     date: '2026-11',
   },
-  {
-    slug: 'irisan-kerucut',
-    title: 'Irisan kerucut: elips, parabola, dan hiperbola dari satu kerucut',
-    excerpt: 'Potong kerucut dengan bidang, ubah sudutnya, lalu lihat kurva mana yang muncul.',
-    tags: ['irisan-kerucut', 'geometri'],
-  },
-  {
-    slug: 'peluang-kelas-10',
-    title: 'Peluang kelas 10: menghitung dulu, memakai rumus kemudian',
-    excerpt:
-      'Catatan mengajar tentang urutan yang membuat aturan penjumlahan dan perkalian masuk akal bagi siswa.',
-    tags: ['peluang', 'mengajar'],
-  },
-  {
-    slug: 'transformasi-geometri-tanpa-matriks',
-    title: 'Transformasi geometri tanpa menghafal matriks',
-    tags: ['transformasi', 'geometri'],
-  },
-  {
-    slug: 'bilangan-kompleks-bidang-argand',
-    title: 'Bilangan kompleks di bidang Argand',
-    tags: ['bilangan-kompleks'],
-  },
-  {
-    slug: 'kombinatorika-osn-sarang-merpati',
-    title: 'Kombinatorika untuk OSN: prinsip sarang merpati',
-    tags: ['kombinatorika', 'olimpiade'],
-  },
 ]

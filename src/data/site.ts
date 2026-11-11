@@ -3,6 +3,5 @@ export const SITE = {
   tagline: 'Blog Matematika ala Avan',
   author: 'Toriq Afanudin',
   description:
-    'Blog matematika T Afanudin: tulisan materi, simulasi interaktif, video, dan catatan dari ruang kelas.',
-  authorWithTitle: 'Toriq Afanudin, S.Pd.',
+    'Blog matematika T Afanudin: tulisan materi, simulasi interaktif di dalam artikel, dan catatan dari ruang kelas.',
 } as const

@@ -3,6 +3,7 @@ import { ArticleFooter } from '@/components/layout/ArticleFooter'
 import { TagList } from '@/components/ui/TagList'
 import { LOMBA_2021_POST_SLUG, posts } from '@/data/posts'
 import { SITE } from '@/data/site'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 const post = posts.find((p) => p.slug === LOMBA_2021_POST_SLUG)!
 
@@ -24,11 +25,13 @@ function ExternalLink({ href, children }: { href: string; children: ReactNode })
 }
 
 export default function Lomba2021Post() {
+  const revealRef = useScrollReveal<HTMLElement>()
+
   return (
     <>
       <title>{`${post.title} — ${SITE.name}`}</title>
       <main id="konten" className="container-page pt-10 pb-16 lg:pt-14 lg:pb-24">
-        <article className="mx-auto w-full max-w-[800px]">
+        <article ref={revealRef} className="mx-auto w-full max-w-[800px]">
           <h1 className="mb-4 text-[30px] leading-[1.2] text-body md:text-[40px]">{post.title}</h1>
           <TagList tags={post.tags} className="mb-3 text-link" />
           <p className="mb-8 text-[15px] text-muted">

@@ -52,6 +52,16 @@
     @apply text-link underline underline-offset-2 transition-colors hover:text-ink;
   }
 
+  /* Animasi muncul saat digulir (lihat hooks/useScrollReveal). Memakai animation, bukan transition,
+     supaya tidak bentrok dengan transisi warna hover pada kartu. */
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.reveal-in {
+    opacity: 1;
+    animation: reveal-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) backwards;
+  }
+
   /* Rumus KaTeX */
   .katex {
     font-size: 1.1em;
@@ -64,5 +74,16 @@
   }
   .katex-display > .katex {
     font-size: 1.28em;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
