@@ -4,7 +4,7 @@ export interface Post {
   excerpt?: string
   /** Tanpa awalan "#". */
   tags: readonly string[]
-  /** Tanggal terbit, format ISO (YYYY-MM-DD atau YYYY-MM). Dipakai untuk SEO. */
+  /** Tanggal terbit, format ISO (YYYY-MM-DD atau YYYY-MM). Tampil di kartu dan dipakai untuk SEO. */
   date?: string
 }
 
@@ -14,11 +14,21 @@ export const QUADRATIC_POST_SLUG = 'dari-bentuk-umum-ke-titik-puncak-fungsi-kuad
 /** Slug tulisan kenangan lomba media pembelajaran 2021. */
 export const LOMBA_2021_POST_SLUG = 'mengingat-perjuangan-5-tahun-yang-lalu'
 
+/** Slug tulisan simulasi matematika (React + JSXGraph). */
+export const SIMULASI_POST_SLUG = 'mengajar-jadi-lebih-mudah-kan'
+
 /** Slug yang sudah punya halaman sendiri. Hanya ini yang masuk sitemap. */
-export const PAGE_SLUGS: readonly string[] = [QUADRATIC_POST_SLUG, LOMBA_2021_POST_SLUG]
+export const PAGE_SLUGS: readonly string[] = [QUADRATIC_POST_SLUG, LOMBA_2021_POST_SLUG, SIMULASI_POST_SLUG]
 
 /** Urutan array = urutan tampil di beranda: tulisan terbaru paling atas. */
 export const posts: readonly Post[] = [
+  {
+    slug: SIMULASI_POST_SLUG,
+    title: 'Mengajar jadi lebih mudah kan?',
+    excerpt: 'Website simulasi matematika buatan sendiri dengan React dan JSXGraph, siap dipakai untuk mengajar.',
+    tags: ['simulasi', 'matematika'],
+    date: '2026-11-11',
+  },
   {
     slug: LOMBA_2021_POST_SLUG,
     title: 'Mengingat perjuangan 5 tahun yang lalu',
@@ -31,6 +41,6 @@ export const posts: readonly Post[] = [
     title: 'Dari bentuk umum ke titik puncak: fungsi kuadrat',
     excerpt: 'Mengapa letak puncak parabola bisa dibaca dari koefisiennya, dijelaskan dengan melengkapkan kuadrat.',
     tags: ['fungsi-kuadrat', 'aljabar'],
-    date: '2026-11',
+    date: '2026-11-09',
   },
 ]

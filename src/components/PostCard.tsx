@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { Link } from 'react-router'
 import { TagList } from '@/components/ui/TagList'
 import type { Post } from '@/data/posts'
+import { formatDate } from '@/lib/format'
 import { routes } from '@/lib/routes'
 
 interface PostCardProps {
@@ -23,6 +24,11 @@ export const PostCard = memo(function PostCard({ post }: PostCardProps) {
             {post.title}
           </Link>
         </h3>
+        {post.date ? (
+          <p className="mb-3 text-[15px] text-muted transition-colors duration-150 group-focus-within:text-white group-hover:text-white">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+          </p>
+        ) : null}
         {post.excerpt ? (
           <p className="mb-5 text-[17px] leading-[1.56] text-muted transition-colors duration-150 group-focus-within:text-white group-hover:text-white">
             {post.excerpt}

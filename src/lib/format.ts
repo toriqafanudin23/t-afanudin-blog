@@ -9,3 +9,15 @@ export function formatNumber(value: number): string {
   const text = numberFormat.format(rounded === 0 ? 0 : rounded)
   return text.replace(LEADING_HYPHEN, '\u2212')
 }
+
+const BULAN = [
+  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
+] as const
+
+/** "2026-11-09" → "9 November 2026"; "2026-11" → "November 2026". */
+export function formatDate(iso: string): string {
+  const [year, month, day] = iso.split('-')
+  const bulan = BULAN[Number(month) - 1]
+  return day ? `${Number(day)} ${bulan} ${year}` : `${bulan} ${year}`
+}

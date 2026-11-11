@@ -41,7 +41,7 @@ export default function Post() {
           <h1 className="mb-4 text-[30px] leading-[1.2] text-body md:text-[40px]">{post.title}</h1>
           <TagList tags={post.tags} className="mb-3 text-link" />
           <p className="mb-8 text-[15px] text-muted">
-            {SITE.author}, <time dateTime="2026-11">November 2026</time>
+            {SITE.author}, <time dateTime="2026-11-09">9 November 2026</time>
           </p>
 
           <p className={BODY}>
