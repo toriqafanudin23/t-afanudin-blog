@@ -12,7 +12,7 @@ const BODY = 'mb-6 text-[17px] leading-[1.56]'
 
 const SITUS_URL = 'https://1729.blog/'
 const YOUTUBE_ID = 'Bn-3BOJDx_o'
-const EMAIL = 'toriqafanudin@gmail.com'
+const EMAIL = 'toriqafanudin23@gmail.com'
 
 function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   return (
